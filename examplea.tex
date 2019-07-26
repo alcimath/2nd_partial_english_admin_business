@@ -1,0 +1,231 @@
+\documentclass[1pt]{exam}
+
+\usepackage{graphicx}
+\usepackage{adforn}
+\usepackage{pifont}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{seqsplit}
+\usepackage{footnote}
+%\usepackage{floatrow}
+%%%%%%  ****************   %%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage{bm}
+\usepackage{tcolorbox}
+\usepackage{amsmath, amsfonts, mathtools, amssymb,scalerel}
+%\usepackage[a4paper, total={8in, 12in}]{geometry}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=15mm,
+ }
+
+\usepackage{pdfpages}
+\usepackage{sidecap}
+\usepackage{float}
+
+\usepackage{booktabs}
+%\usepackage{mathtools}
+\DeclarePairedDelimiter\set\{\} 
+%\usepackage{multicol}
+
+\setlength{\columnsep}{3cm}
+
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+
+\def\msquare{\mathord{\scalebox{1.5}[1]{\scalerel*{\Box}{\strut}}}}
+
+\title{UCSD \\ Year 2019\\ English for Business and Business Adm.}
+%\author{Alcibiades Abreu}
+\date{\Large \textsc{2\textsuperscript{nd} Partial Exam}}
+
+
+
+
+%%%%%%%%%%   *****************  %%%%%%%%%%%%%%%%%
+
+\usepackage{xpatch}
+\xpatchcmd{\oneparchoices}{\penalty -50\hskip 1em plus 1em\relax}{\hfill}{}{}
+\xpatchcmd{\oneparchoices}{\penalty -50\hskip 1em plus 1em\relax}{\hfill}{}{}
+
+
+
+\newcommand*{\TrueFalse}[1]{%
+\ifprintanswers
+    \ifthenelse{\equal{#1}{T}}{%
+        \textbf{TRUE}\hspace*{14pt}False
+    }{
+        True\hspace*{14pt}\textbf{FALSE}
+    }
+\else
+    {True}\hspace*{20pt}False
+\fi
+} 
+%% The following code is based on an answer by Gonzalo Medina
+%% https://tex.stackexchange.com/a/13106/39194
+\newlength\TFlengthA
+\newlength\TFlengthB
+\settowidth\TFlengthA{\hspace*{1.16in}}
+\newcommand\TFQuestion[2]{%
+    \setlength\TFlengthB{\linewidth}
+    \addtolength\TFlengthB{-\TFlengthA}
+    \parbox[t]{\TFlengthA}{\TrueFalse{#1}}\parbox[t]{\TFlengthB}{#2}}
+
+
+%% Create a Matching question format
+\newcommand*\Matching[1]{
+\ifprintanswers
+    \textbf{#1}
+\else
+    \rule{2.1in}{0.5pt}
+\fi
+}
+\newlength\matchlena
+\newlength\matchlenb
+\settowidth\matchlena{\rule{2.1in}{0pt}}
+\newcommand\MatchQuestion[2]{%
+    \setlength\matchlenb{\linewidth}
+    \addtolength\matchlenb{-\matchlena}
+    \parbox[t]{\matchlena}{\Matching{#1}}\enspace\parbox[t]{\matchlenb}{#2}}
+
+%% last matching stuff
+
+\newcommand{\midmatch}{\hspace{0.75in}\underline{\hspace{0.5in}     }}
+
+\begin{document}
+
+
+\maketitle
+\large
+
+\begin{itemize}
+ \item \textbf{Name:} \hrulefill
+  \item \textbf{ID:} \hrulefill
+  \item \textbf{Date:} \hrulefill
+\end{itemize}
+
+
+
+\begin{questions}
+
+\fullwidth{\section{True or False}}\fullwidth{%
+\textbf{Circle True or False.  Read the statements carefully before answering.}}\vskip.3cm
+
+\question\TFQuestion{F}{The ``\textbf{simple present tense}'' is used to establish a fact in the past.}
+\question\TFQuestion{F}{``\textbf{Often}'' is an adjective.}
+\question\TFQuestion{T}{ A ``\textbf{pension}'' is an amount of money you get when you old and don't work.}
+\question\TFQuestion{T}{A ``\textbf{budget}'' is a plan you make about what to buy and how much you spend.}
+\question\TFQuestion{T}{A ``\textbf{widthdrawal}'' refers to money taken out of a bank account.}
+
+\vskip.5cm
+
+
+\fullwidth{\textbf{Match the \emph{most appropriate} expression to each statement. No term is used twice.}}
+\vspace{-1\baselineskip}
+\fullwidth{%
+\begin{multicols}{2}
+\emph{There is} \\
+\emph{A Brazilian}\\
+\emph{Portuguese} \\
+\emph{A Senior Account Manager} \\
+\emph{I usually}
+\end{multicols}
+
+}
+\vspace{0.7\baselineskip}
+
+\question\MatchQuestion{I usually}{\dots get up late everday.}
+\vspace{0.7\baselineskip}
+
+\question\MatchQuestion{There is}{\dots lots of money in this saving account.}
+\vspace{0.7\baselineskip}
+
+\question\MatchQuestion{A Portuguese}{\dots is a language from Europe and South America. }
+\vspace{0.7\baselineskip}
+
+\question\MatchQuestion{A senior account manager}{\dots is responsible for opening new accounts at a bank. This person gives customers information about interest rates and accounts.}
+\vspace{0.7\baselineskip}
+
+\question\MatchQuestion{A Brazilian }{\ldots is someone who speaks Portuguese.}
+\vspace{0.7\baselineskip}
+
+
+%\fullwidth{\section{Matching}}
+%\question
+%Match the left column with the appropriate \emph{word}\textbackslash %\emph{sentence} \textbackslash \emph{quantity} \textbackslash %\emph{etc.} on the right.
+%\begin{center}
+%\begin{tabular}{llll}
+%a.  &   Linear pairs &   \midmatch   &   $180^{\circ}$\\
+%&&&\\
+%b.  &   Triangle   &   \midmatch   & A 3--side polygon.\\
+%&&&\\
+%c.  &   Right angle      &   \midmatch   &   It measures $90^{\circ}$\\
+%&&&\\
+%d.  &   Sum of the interior angles in a triangle      &   \midmatch   & %  Congruent\\
+%&&&\\
+%e.  &   Alternate Interior angles       &   \midmatch   &   %Supplementary
+%\end{tabular}
+%\end{center}
+
+\fullwidth{\section{Multiple Choice}}
+\uplevel{\textbf{Circle \framebox[1.1\width]{the letter} of the correct answer.}}
+
+\question
+   \rule{2cm}{.4pt} of new employees and trainees.\\
+   \begin{oneparchoices}
+    \choice I handle
+    \choice I deal 
+    \choice I take care
+    \choice I am  responsible 
+\end{oneparchoices}
+
+\vskip.3cm
+
+\question \rule{2cm}{.4pt} customers inquieries and problems.\\
+    
+   \begin{oneparchoices}
+    \choice I handle
+    \choice I deal 
+    \choice I take care
+    \choice I am responsible
+\end{oneparchoices}
+
+\vskip.3cm
+
+\question
+   \rule{2cm}{.4pt} for all the office equipment.\\
+   \begin{oneparchoices}
+   \choice I handle
+    \choice I deal 
+    \choice I take care
+    \choice I am responsible
+    \end{oneparchoices}
+    
+\vskip.3cm
+
+\question
+   \rule{2cm}{.4pt} with customers' complaints.\\
+   \begin{oneparchoices}
+   \choice I handle
+    \choice I deal 
+    \choice I take care
+    \choice I am responsible
+    \end{oneparchoices}
+    
+
+
+
+\fullwidth{\section{Composition}} 
+\uplevel{\textbf{Write as much clear as you can. Be careful about spelling and word choice. }}
+
+\question Write a small paragraph (a minimum of 4 long sentences) about  the job position you are dreaming of having in the future.
+
+
+
+\end{questions}
+ \end{document}
